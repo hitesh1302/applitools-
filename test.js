@@ -10,11 +10,11 @@ const { Eyes, Target, ClassicRunner, Configuration } = require('@applitools/eyes
 
   const config = new Configuration();
   config.setApiKey(process.env.APPLITOOLS_API_KEY);
-  config.setAppName('Datawords Visual Test');
-  config.setTestName('Services Page - Live UI');
-  config.setBatch({ name: 'Visual Comparison Batch' });
-  eyes.setConfiguration(config);
   eyes.setMatchLevel('Strict');
+  config.setAppName('Datawords Visual Test');
+  config.setTestName('Production Page - Live UI');
+  config.setBatch({ name: 'Production Visual Comparison Batch' });
+  eyes.setConfiguration(config);
 
   try {
     await eyes.open(driver);

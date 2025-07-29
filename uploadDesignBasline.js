@@ -11,15 +11,15 @@ const { Eyes, Target, ClassicRunner, Configuration } = require('@applitools/eyes
   const config = new Configuration();
   config.setApiKey(process.env.APPLITOOLS_API_KEY);
   config.setAppName('Datawords Visual Test');
-  config.setTestName('Services Page Design Baseline');
-  config.setBatch({ name: "Visual Comparison Batch" });
+  config.setTestName('Production Page Design Baseline');
+  config.setBatch({ name: "Production FIGMA Batch" });
   eyes.setConfiguration(config);
 
   try {
     await eyes.open(driver);
 
     // Load the Figma design (hosted image)
-    await driver.get('https://github.com/hitesh1302/applitools-/blob/main/applitools/services-page-design.jpg');
+    await driver.get('https://github.com/hitesh1302/applitools-/blob/main/applitools/production-design-page.png');
 
     // Take visual snapshot
     await eyes.check('Figma Design Snapshot', Target.window().fully());
